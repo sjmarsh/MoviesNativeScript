@@ -1,0 +1,15 @@
+@import "nativescript-theme-core/css/core.light.css";
+
+.even{
+  background-color:lightgray;
+}
+
+.movieTitle{
+  font-size:30;
+  font-family: 'Segoe UI', Arial
+}
+
+.movieDetail{
+  font-size:15;
+  font-family: 'Segoe UI', Arial
+}
