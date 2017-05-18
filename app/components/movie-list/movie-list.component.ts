@@ -16,19 +16,7 @@ import { MovieService }   from '../../services';
 
 @Component({
   selector: "movie-list",
-  template: `    
-    <StackLayout>
-      <SearchBar #sb id="searchbar" hint="Search" (loaded)="searchBarLoaded($event)" (textChange)="searchBarChanged(sb.text)"></SearchBar>
-      <ListView [items]="movies" (loadMoreItems)="listViewLoadMoreItems()" >
-          <template let-item="item" let-odd="odd" let-even="even">
-              <StackLayout [class.odd]="odd" [class.even]="even" (tap)="goToDetail(item.id); false">
-                  <Label [text]='item.title' class="movieTitle"></Label>
-                  <Label [text]="item.releaseYear + ' - ' + item.category + ' - ' + item.runningTime" class="movieDetail"></Label>
-              </StackLayout>
-          </template>
-      </ListView>
-    </StackLayout>
-  `
+  templateUrl: "./components/movie-list/movie-list.component.html"  
 })
 
 export class MovieListComponent implements OnInit {

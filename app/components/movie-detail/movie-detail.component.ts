@@ -13,26 +13,7 @@ import { MovieService }   from "../../services";
 
 @Component({
   selector: "movie-detail",
-  template: `   
-    <GridLayout columns="*, *" rows="*, *, *, *, *, *, *, *" margin="5, 5, 5, 5">
-        <Label text="Title" row="0" col="0" ></Label>
-        <Label text="{{movieDetail.title}}" row="0" col="1"></Label>
-        <Label text="Release Year" row="1" col="0"></Label>
-        <Label text="{{movieDetail.releaseYear}}" row="1" col="1"></Label>
-        <Label text="Category" row="2" col="0"></Label>
-        <Label text="{{movieDetail.category}}" row="2" col="1"></Label>
-        <Label text="Classification" row="3" col="0"></Label>
-        <Label text="{{movieDetail.classification}}" row="3" col="1"></Label>
-        <Label text="Format" row="4" col="0"></Label>
-        <Label text="{{movieDetail.format}}" row="4" col="1"></Label>
-        <Label text="Running Time" row="5" col="0"></Label>
-        <Label text="{{movieDetail.runningTime}}" row="5" col="1"></Label>
-        <Label text="TV Recording" row="6" col="0"></Label>
-        <Label text="{{movieDetail.tvRecording}}" row="6" col="1"></Label>
-        <Label text="Date Added" row="7" col="0"></Label>
-        <Label text="{{movieDetail.dateAdded}}" row="7" col="1"></Label>
-    </GridLayout>
-  `
+  templateUrl: "./components/movie-detail/movie-detail.component.html"
 })
 
 export class MovieDetailComponent implements OnInit {
@@ -41,7 +22,6 @@ export class MovieDetailComponent implements OnInit {
               private router: Router, 
               private movieService: MovieService) {
   }
-
   
   movieDetail = new Movie();
 
@@ -55,5 +35,4 @@ export class MovieDetailComponent implements OnInit {
   backToList(){
     this.router.navigate(['/home']);
   }
-
 }
