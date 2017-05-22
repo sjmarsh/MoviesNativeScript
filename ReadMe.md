@@ -8,7 +8,7 @@ Aims to explore: </br>
 
 ## TODO ##
 - <del>Search</del>  
-- Categories
+- <del>Categories</del>
 - Improve Style/Layout
 - Tests
 
