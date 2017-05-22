@@ -1,0 +1,40 @@
+.categoryFilterButton {
+    margin: 10;
+    horizontal-align: left;
+    font-family: IcoMoon-Free;
+    font-size: 16;
+    background-color: transparent;
+}
+
+.filtered {
+    color:blue;
+}
+
+.notFiltered {
+    color: gray;
+}
+
+.categorySelectionHeader{
+  font-size: 18;
+  font-weight: bold;
+  color: black;
+}
+
+.category{
+  font-size: 16;
+  padding: 1;
+}
+
+.categorySelection {
+    background-color: white;
+}
+
+.selected {
+  font-weight: bold;
+  color: black;
+}
+
+.not-selected {
+  font-weight: normal;
+  color: gray;
+}

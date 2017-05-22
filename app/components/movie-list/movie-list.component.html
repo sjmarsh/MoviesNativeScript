@@ -1,11 +1,29 @@
-<StackLayout>
-  <SearchBar #sb id="searchbar" hint="Search" (loaded)="searchBarLoaded($event)" (textChange)="searchBarChanged(sb.text)"></SearchBar>
-  <ListView [items]="movies" (loadMoreItems)="listViewLoadMoreItems()" >
-      <template let-item="item" let-odd="odd" let-even="even">
-          <StackLayout [class.odd]="odd" [class.even]="even" (tap)="goToDetail(item.id); false">
-              <Label [text]='item.title' class="movieTitle"></Label>
-              <Label [text]="item.releaseYear + ' - ' + item.category + ' - ' + item.runningTime" class="movieDetail"></Label>
-          </StackLayout>
-      </template>
-  </ListView>
-</StackLayout>
+<RadSideDrawer tkExampleTitle tkToggleNavButton>
+    <StackLayout tkDrawerContent class="categorySelection">
+        <Label text="Choose Categories to Filter By..." class="categorySelectionHeader"></Label>
+        <ListView [items]="categories">
+            <template let-item="item">
+                <StackLayout (tap)="toggleCategorySelection(item)" >
+                    <Label [text]="item.category" class="category {{item.isSelected ? 'selected' : 'not-selected'}}" ></Label>
+                </StackLayout>
+            </template>
+        </ListView>        
+        <Button text="Clear Selections" (tap)="clearCategorySelections()"></Button>
+        <Button text="Close" (tap)="onCloseDrawerTap()"></Button>
+    </StackLayout>
+    <StackLayout tkMainContent>       
+        <GridLayout columns="*,80" rows="75">
+            <SearchBar col="0" row="0" #sb id="searchbar" hint="Search" (loaded)="searchBarLoaded($event)" (textChange)="searchBarChanged(sb.text)"></SearchBar>
+            <Button col="1" row="0" text="{{filterIcon}}" (tap)="openDrawer()" class="categoryFilterButton {{ hasCategoriesSelected ? 'filtered' : 'notFiltered' }}"></Button>
+        </GridLayout>
+        <ListView [items]="movies" (loadMoreItems)="listViewLoadMoreItems()" >
+            <template let-item="item" let-odd="odd" let-even="even">
+                <StackLayout [class.odd]="odd" [class.even]="even" (tap)="goToDetail(item.id); false">
+                    <Label [text]='item.title' class="movieTitle"></Label>
+                    <Label [text]="item.releaseYear + ' - ' + item.category + ' - ' + item.runningTime" class="movieDetail"></Label>
+                </StackLayout>
+            </template>
+        </ListView>
+
+    </StackLayout>
+</RadSideDrawer>

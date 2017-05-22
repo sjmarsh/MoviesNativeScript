@@ -1,22 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 
+import { EnvironmentConfig }  from './environment-config';
 
 @Injectable()
 export class ReferenceDataService {
-  //private baseUrl = environment.movieApiUrl + '/api/referenceData';
   private baseUrl = '';
   private headers = new Headers({'Content-Type': 'application/json'});
 
-  constructor(private http: Http){
-    var env = this.getEnvironmentData();
-    this.baseUrl = env.movieApiUrl + '/api/movies';
-  }
-
-  private getEnvironmentData(): any{
-    let data = {};
-    this.http.get('../environment.json').subscribe(env =>  data = env.json());
-    return data;
+  constructor(private http: Http, private config: EnvironmentConfig ){
+    this.baseUrl = config.movieApiUrl() + '/api/referenceData';
   }
 
   getCategories(): Promise<string[]> {
