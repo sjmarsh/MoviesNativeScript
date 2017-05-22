@@ -1,18 +1,20 @@
-<GridLayout columns="*, *" rows="*, *, *, *, *, *, *, *" margin="5, 5, 5, 5">
-    <Label text="Title" row="0" col="0" ></Label>
-    <Label text="{{movieDetail.title}}" row="0" col="1"></Label>
-    <Label text="Release Year" row="1" col="0"></Label>
-    <Label text="{{movieDetail.releaseYear}}" row="1" col="1"></Label>
-    <Label text="Category" row="2" col="0"></Label>
-    <Label text="{{movieDetail.category}}" row="2" col="1"></Label>
-    <Label text="Classification" row="3" col="0"></Label>
-    <Label text="{{movieDetail.classification}}" row="3" col="1"></Label>
-    <Label text="Format" row="4" col="0"></Label>
-    <Label text="{{movieDetail.format}}" row="4" col="1"></Label>
-    <Label text="Running Time" row="5" col="0"></Label>
-    <Label text="{{movieDetail.runningTime}}" row="5" col="1"></Label>
-    <Label text="TV Recording" row="6" col="0"></Label>
-    <Label text="{{movieDetail.tvRecording}}" row="6" col="1"></Label>
-    <Label text="Date Added" row="7" col="0"></Label>
-    <Label text="{{movieDetail.dateAdded}}" row="7" col="1"></Label>
+<GridLayout columns="auto, *" rows="*, *, *, *, *, *, *, *, *, auto" margin="5, 5, 5, 5">
+    <Label text="Title" row="0" col="0" class="detailLabel"></Label>
+    <Label text="{{movieDetail.title}}" row="0" col="1" class="detailValue"></Label>
+    <Label text="Release Year" row="1" col="0" class="detailLabel"></Label>
+    <Label text="{{movieDetail.releaseYear}}" row="1" col="1" class="detailValue"></Label>
+    <Label text="Category" row="2" col="0" class="detailLabel"></Label>
+    <Label text="{{movieDetail.category}}" row="2" col="1" class="detailValue"></Label>
+    <Label text="Classification" row="3" col="0" class="detailLabel"></Label>
+    <Label text="{{movieDetail.classification}}" row="3" col="1" class="detailValue"></Label>
+    <Label text="Format" row="4" col="0" class="detailLabel"></Label>
+    <Label text="{{movieDetail.format}}" row="4" col="1" class="detailValue"></Label>
+    <Label text="Running Time" row="5" col="0" class="detailLabel"></Label>
+    <Label text="{{movieDetail.runningTime}}" row="5" col="1" class="detailValue"></Label>
+    <Label text="TV Recording" row="6" col="0" class="detailLabel"></Label>
+    <Label text="{{movieDetail.tvRecording ? 'Yes' : 'No'}}" row="6" col="1" class="detailValue"></Label>
+    <Label text="Date Added" row="7" col="0" class="detailLabel"></Label>
+    <Label text="{{movieDetail.dateAdded|date:'dd-MM-yyyy'}}" row="7" col="1" class="detailValue"></Label>
+    <Label text="Description" row="8" col="0" class="detailLabel"></Label>
+    <Label text="{{movieDetail.description}}" row="9" col="1" class="detailDescription" textWrap="true"></Label>
 </GridLayout>

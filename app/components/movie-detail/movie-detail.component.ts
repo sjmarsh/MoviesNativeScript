@@ -13,7 +13,8 @@ import { MovieService }   from "../../services";
 
 @Component({
   selector: "movie-detail",
-  templateUrl: "./components/movie-detail/movie-detail.component.html"
+  templateUrl: "./components/movie-detail/movie-detail.component.html",
+  styleUrls: ["./components/movie-detail/movie-detail.component.css"]
 })
 
 export class MovieDetailComponent implements OnInit {
