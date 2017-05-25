@@ -27,7 +27,7 @@ To test on physical android device:
 3. Ensure device detected/connected (USB drivers installed)
 4. Check device listed: `tns device list`
 5. Run deploy command:
-	`tns deploy android --release --key-store-path "<<PathToStore>>.keystore" --key-store-password "<<Password>>" --key-store-alias "mykey" --key-store-alias-password "<<Password>>"`
+	`tns deploy android --production --key-store-path "<<PathToStore>>.keystore" --key-store-password "<<Password>>" --key-store-alias "mykey" --key-store-alias-password "<<Password>>"`
 
 #### Notes: ####
 - PathToStore on Windows 10 is "c:\users\username"
