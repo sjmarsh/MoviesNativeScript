@@ -16,6 +16,7 @@ export class EnvironmentConfig {
     console.log('Initialize Environment!');
     this.configData = FileReader.readJSONSync('environment.json');
     console.log('Done initializing environment.');
+    console.log(`Running in ${this.configData.environment} mode.`);
   }
 
   movieApiUrl() : string{
@@ -24,6 +25,15 @@ export class EnvironmentConfig {
     }
     else {
       return this.configData.movieApiUrl;
+    }
+  }
+
+  environment() : string{
+    if(this.configData == null){
+      throw('Error: Environment config was not initialized.')
+    }
+    else {
+      return this.configData.environment;
     }
   }
 
